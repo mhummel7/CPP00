@@ -17,7 +17,7 @@ public:
 
 	void setFirstName(std::string name);
 	void setLastName(std::string name);
-	void setNickname(std::string nuck);
+	void setNickname(std::string nick);
 	void setPhoneNumber(std::string number);
 	void setDarkestSecret(std::string secret);
 
