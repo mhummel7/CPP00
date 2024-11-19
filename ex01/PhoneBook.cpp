@@ -6,7 +6,7 @@
 /*   By: mhummel <mhummel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/17 16:30:43 by mhummel           #+#    #+#             */
-/*   Updated: 2024/11/19 11:39:26 by mhummel          ###   ########.fr       */
+/*   Updated: 2024/11/19 12:57:24 by mhummel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,24 +39,29 @@ std::string truncate(std::string str) {
 }
 
 void PhoneBook::displayContact() const {
-	std::cout << MAGENTA << std::setw(10) << "Index" << RESET << "|";
+	std::cout << "\n○-------------------------------------------○" << std::endl;
+	std::cout << "|" << MAGENTA << std::setw(10) << "Index  " << RESET << "|";
 	std::cout << GREEN << std::setw(10) << "FirstName" << RESET << "|";
-	std::cout << BLUE << std::setw(10) << "LastName" << RESET << "|";
-	std::cout << YELLOW << std::setw(10) << "Nickname" << RESET << std::endl;
+	std::cout << BLUE << std::setw(10) << "LastName " << RESET << "|";
+	std::cout << YELLOW << std::setw(10) << "Nickname " << RESET << "|" << std::endl;
+	std::cout << "○-------------------------------------------○" << std::endl;
 	for (int i = 0; i < this->contactCount; i++) {
-		std::cout << std::setw(10) << i << "|";
+		std::cout << "|" << std::setw(10) << i << "|";
 		std::cout << std::setw(10) << truncate(this->contacts[i].getFirstName()) << "|";
 		std::cout << std::setw(10) << truncate(this->contacts[i].getLastName()) << "|";
-		std::cout << std::setw(10) << truncate(this->contacts[i].getNickname()) << std::endl;
+		std::cout << std::setw(10) << truncate(this->contacts[i].getNickname()) << "|" << std::endl;
 	}
+	std::cout << "○-------------------------------------------○" << std::endl;
+	std::cout <<"\n" << std::endl;
 }
 
 void PhoneBook::searchContact() const {
 	int index;
 
 	this->displayContact();
-	std::cout << "Enter the index of the contact you would like to view: ";
+	std::cout << "Enter the \033[35mindex\033[0m of the contact you would like to view: ";
 	std::cin >> index;
+	std::cin.ignore(10000, '\n');
 
 	if (std::cin.fail() || index < 0 || index >= this->contactCount) {
 		std::cout << "Invalid index." << std::endl;
@@ -69,5 +74,5 @@ void PhoneBook::searchContact() const {
 	std::cout << BLUE << "Last Name: " << RESET << this->contacts[index].getLastName() << std::endl;
 	std::cout << YELLOW << "Nickname: " << RESET << this->contacts[index].getNickname() << std::endl;
 	std::cout << CYAN << "Phone Number: " << RESET << this->contacts[index].getPhoneNumber() << std::endl;
-	std::cout << RED << "Darkest Secret: " << RESET << this->contacts[index].getDarkestSecret() << std::endl;
+	std::cout << RED << "Darkest Secret: " << RESET << this->contacts[index].getDarkestSecret() << "\n" << std::endl;
 }
