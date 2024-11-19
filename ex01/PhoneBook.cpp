@@ -6,7 +6,7 @@
 /*   By: mhummel <mhummel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/17 16:30:43 by mhummel           #+#    #+#             */
-/*   Updated: 2024/11/17 16:36:06 by mhummel          ###   ########.fr       */
+/*   Updated: 2024/11/19 11:39:26 by mhummel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,10 +39,10 @@ std::string truncate(std::string str) {
 }
 
 void PhoneBook::displayContact() const {
-	std::cout << std::setw(10) << "Index" << "|";
-	std::cout << std::setw(10) << "First Name" << "|";
-	std::cout << std::setw(10) << "Last Name" << "|";
-	std::cout << std::setw(10) << "Nickname" << std::endl;
+	std::cout << MAGENTA << std::setw(10) << "Index" << RESET << "|";
+	std::cout << GREEN << std::setw(10) << "FirstName" << RESET << "|";
+	std::cout << BLUE << std::setw(10) << "LastName" << RESET << "|";
+	std::cout << YELLOW << std::setw(10) << "Nickname" << RESET << std::endl;
 	for (int i = 0; i < this->contactCount; i++) {
 		std::cout << std::setw(10) << i << "|";
 		std::cout << std::setw(10) << truncate(this->contacts[i].getFirstName()) << "|";
@@ -65,9 +65,9 @@ void PhoneBook::searchContact() const {
 		return;
 	}
 
-	std::cout << "First Name: " << this->contacts[index].getFirstName() << std::endl;
-	std::cout << "Last Name: " << this->contacts[index].getLastName() << std::endl;
-	std::cout << "Nickname: " << this->contacts[index].getNickname() << std::endl;
-	std::cout << "Phone Number: " << this->contacts[index].getPhoneNumber() << std::endl;
-	std::cout << "Darkest Secret: " << this->contacts[index].getDarkestSecret() << std::endl;
+	std::cout << GREEN << "First Name: " << RESET << this->contacts[index].getFirstName() << std::endl;
+	std::cout << BLUE << "Last Name: " << RESET << this->contacts[index].getLastName() << std::endl;
+	std::cout << YELLOW << "Nickname: " << RESET << this->contacts[index].getNickname() << std::endl;
+	std::cout << CYAN << "Phone Number: " << RESET << this->contacts[index].getPhoneNumber() << std::endl;
+	std::cout << RED << "Darkest Secret: " << RESET << this->contacts[index].getDarkestSecret() << std::endl;
 }

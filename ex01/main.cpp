@@ -6,7 +6,7 @@
 /*   By: mhummel <mhummel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/17 16:36:12 by mhummel           #+#    #+#             */
-/*   Updated: 2024/11/17 16:38:08 by mhummel          ###   ########.fr       */
+/*   Updated: 2024/11/19 11:36:39 by mhummel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,23 +17,23 @@ Contact createContact() {
 	Contact contact;
 	std::string input;
 
-	std::cout << "Enter first name: ";
+	std::cout << "Enter \033[32mfirst name:\033[0m ";
 	std::getline(std::cin, input);
 	contact.setFirstName(input);
 
-	std::cout << "Enter last name: ";
+	std::cout << "Enter \033[34mlast name:\033[0m ";
 	std::getline(std::cin, input);
 	contact.setLastName(input);
 
-	std::cout << "Enter nickname: ";
+	std::cout << "Enter \033[33mnickname:\033[0m ";
 	std::getline(std::cin, input);
 	contact.setNickname(input);
 
-	std::cout << "Enter phone number: ";
+	std::cout << "Enter \033[36mphone number:\033[0m ";
 	std::getline(std::cin, input);
 	contact.setPhoneNumber(input);
 
-	std::cout << "Enter darkest secret: ";
+	std::cout << "Enter \033[31mdarkest secret:\033[0m ";
 	std::getline(std::cin, input);
 	contact.setDarkestSecret(input);
 
