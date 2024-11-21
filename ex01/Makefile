@@ -1,17 +1,26 @@
-SRC = PhoneBook.cpp Contact.cpp main.cpp
+SRC =	PhoneBook.cpp \
+		Contact.cpp \
+		main.cpp
+
 CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
-OBJ = $(SRC:.cpp=.o)
+
+OBJ_DIR = obj
+OBJ = $(addprefix $(OBJ_DIR)/, $(SRC:.cpp=.o))
 NAME = PhoneBook
 
 all: $(NAME)
+
+$(OBJ_DIR)/%.o: %.cpp
+	@mkdir -p $(OBJ_DIR)
+	$(CXX) $(CXXFLAGS) -c $< -o $@
 
 $(NAME): $(OBJ)
 	$(CXX) $(CXXFLAGS) -o $(NAME) $(OBJ)
 	clear
 
 clean:
-	rm -f $(OBJ)
+	rm -rf $(OBJ_DIR)
 
 fclean: clean
 	rm -f $(NAME)
