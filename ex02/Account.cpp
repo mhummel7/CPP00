@@ -6,7 +6,7 @@
 /*   By: mhummel <mhummel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/21 10:34:16 by mhummel           #+#    #+#             */
-/*   Updated: 2024/11/21 11:05:46 by mhummel          ###   ########.fr       */
+/*   Updated: 2024/11/21 11:06:52 by mhummel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,4 +52,13 @@ Account::Account(int initial_deposit) :
 	std::cout	<< "index:" << _accountIndex << ";"
 				<< "amount:" << _amount << ";"
 				<< "created" << std::endl;
+}
+
+// Destruktor
+Account::~Account(void)
+{
+	_displayTimestamp();
+	std::cout	<< "index:" << _accountIndex << ";"
+				<< "amount:" << _amount << ";"
+				<< "closed" << std::endl;
 }
