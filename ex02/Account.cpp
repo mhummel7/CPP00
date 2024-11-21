@@ -6,7 +6,7 @@
 /*   By: mhummel <mhummel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/21 10:34:16 by mhummel           #+#    #+#             */
-/*   Updated: 2024/11/21 11:06:52 by mhummel          ###   ########.fr       */
+/*   Updated: 2024/11/21 11:07:49 by mhummel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,3 +62,22 @@ Account::~Account(void)
 				<< "amount:" << _amount << ";"
 				<< "closed" << std::endl;
 }
+
+// Getter
+int Account::getNbAccounts(void)
+{
+	return (_nbAccounts);
+}
+int Account::getTotalAmount(void)
+{
+	return (_totalAmount);
+}
+int Account::getNbDeposits(void)
+{
+	return (_totalNbDeposits);
+}
+int Account::getNbWithdrawals(void)
+{
+	return (_totalNbWithdrawals);
+}
+
