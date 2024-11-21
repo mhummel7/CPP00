@@ -6,7 +6,7 @@
 /*   By: mhummel <mhummel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/21 10:34:16 by mhummel           #+#    #+#             */
-/*   Updated: 2024/11/21 11:04:35 by mhummel          ###   ########.fr       */
+/*   Updated: 2024/11/21 11:05:46 by mhummel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,4 +36,20 @@ void Account::_displayTimestamp(void)
 				<< std::setw(2) << ltm->tm_min
 				<< std::setw(2) << ltm->tm_sec
 				<< "] ";
+}
+
+// Konstruktor
+Account::Account(int initial_deposit) :
+	_accountIndex(_nbAccounts),
+	_amount(initial_deposit),
+	_nbDeposits(0),
+	_nbWithdrawals(0)
+{
+	_nbAccounts++;
+	_totalAmount += initial_deposit;
+
+	_displayTimestamp();
+	std::cout	<< "index:" << _accountIndex << ";"
+				<< "amount:" << _amount << ";"
+				<< "created" << std::endl;
 }
