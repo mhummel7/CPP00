@@ -6,7 +6,7 @@
 /*   By: mhummel <mhummel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/21 10:34:16 by mhummel           #+#    #+#             */
-/*   Updated: 2024/11/21 11:14:23 by mhummel          ###   ########.fr       */
+/*   Updated: 2024/11/21 11:16:35 by mhummel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -127,4 +127,14 @@ bool Account::makeWithdrawal(int withdrawal)
 int Account::checkAmount(void) const
 {
 	return (_amount);
+}
+
+// Display Account status
+void Account::displayStatus(void) const
+{
+	_displayTimestamp();
+	std::cout	<< "index:" << _accountIndex << ";"
+				<< "amount:" << _amount << ";"
+				<< "deposits:" << _nbDeposits << ";"
+				<< "withdrawals:" << _nbWithdrawals << std::endl;
 }
