@@ -6,7 +6,7 @@
 /*   By: mhummel <mhummel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/21 10:34:16 by mhummel           #+#    #+#             */
-/*   Updated: 2024/11/21 11:07:49 by mhummel          ###   ########.fr       */
+/*   Updated: 2024/11/21 11:09:22 by mhummel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,3 +81,19 @@ int Account::getNbWithdrawals(void)
 	return (_totalNbWithdrawals);
 }
 
+// Deposit
+void Account::makeDeposit(int deposit)
+{
+	int p_amount = _amount;
+	_amount += deposit;
+	_nbDeposits++;
+	_totalAmount += deposit;
+	_totalNbDeposits++;
+
+	_displayTimestamp();
+	std::cout	<< "index:" << _accountIndex << ";"
+				<< "p_amount:" << p_amount << ";"
+				<< "deposit:" << deposit << ";"
+				<< "amount:" << _amount << ";"
+				<< "nb_deposits:" << _nbDeposits << std::endl;
+}
