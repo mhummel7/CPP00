@@ -6,7 +6,7 @@
 /*   By: mhummel <mhummel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/21 10:34:16 by mhummel           #+#    #+#             */
-/*   Updated: 2024/11/21 11:11:48 by mhummel          ###   ########.fr       */
+/*   Updated: 2024/11/21 11:14:23 by mhummel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -120,4 +120,11 @@ bool Account::makeWithdrawal(int withdrawal)
 				<< "amount:" << _amount << ";"
 				<< "nb_withdrawals:" << _nbWithdrawals << std::endl;
 	return true;
+}
+
+
+// Check Account amount
+int Account::checkAmount(void) const
+{
+	return (_amount);
 }
