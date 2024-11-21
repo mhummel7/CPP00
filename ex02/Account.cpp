@@ -6,7 +6,7 @@
 /*   By: mhummel <mhummel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/21 10:34:16 by mhummel           #+#    #+#             */
-/*   Updated: 2024/11/21 11:04:07 by mhummel          ###   ########.fr       */
+/*   Updated: 2024/11/21 11:04:35 by mhummel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,3 +21,19 @@ int Account::_totalAmount = 0;
 int Account::_totalNbDeposits = 0;
 int Account::_totalNbWithdrawals = 0;
 
+// Display Timestamp
+void Account::_displayTimestamp(void)
+{
+	time_t now = time(nullptr);
+	struct tm *ltm = localtime(&now);
+
+	std::cout	<< "[" << std::setfill('0')
+				<< std::setw(4) << 1900 + ltm->tm_year
+				<< std::setw(2) << 1 + ltm->tm_mon
+				<< std::setw(2) << ltm->tm_mday
+				<< "_"
+				<< std::setw(2) << ltm->tm_hour
+				<< std::setw(2) << ltm->tm_min
+				<< std::setw(2) << ltm->tm_sec
+				<< "] ";
+}
