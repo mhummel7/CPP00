@@ -6,7 +6,7 @@
 /*   By: mhummel <mhummel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/21 10:34:16 by mhummel           #+#    #+#             */
-/*   Updated: 2024/11/21 11:09:22 by mhummel          ###   ########.fr       */
+/*   Updated: 2024/11/21 11:11:48 by mhummel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,4 +96,28 @@ void Account::makeDeposit(int deposit)
 				<< "deposit:" << deposit << ";"
 				<< "amount:" << _amount << ";"
 				<< "nb_deposits:" << _nbDeposits << std::endl;
+}
+
+// Withdrawal
+bool Account::makeWithdrawal(int withdrawal)
+{
+	_displayTimestamp();
+	std::cout	<< "index:" << _accountIndex << ";"
+				<< "p_amount:" << _amount << ";";
+
+	if (_amount < withdrawal)
+	{
+		std::cout << "withdrawal:refused" << std::endl;
+		return false;
+	}
+
+	_amount -= withdrawal;
+	_nbWithdrawals++;
+	_totalAmount -= withdrawal;
+	_totalNbWithdrawals++;
+
+	std::cout	<< "withdrawal:" << withdrawal << ";"
+				<< "amount:" << _amount << ";"
+				<< "nb_withdrawals:" << _nbWithdrawals << std::endl;
+	return true;
 }
